@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valuuttamuunnin", "Valuuttamuunnin\Valuuttamuunnin.csproj", "{A0ED9C46-FBAB-457D-9039-D2A8C4417A9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0ED9C46-FBAB-457D-9039-D2A8C4417A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0ED9C46-FBAB-457D-9039-D2A8C4417A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0ED9C46-FBAB-457D-9039-D2A8C4417A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0ED9C46-FBAB-457D-9039-D2A8C4417A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57F1BE29-844C-4791-8013-D40F41D86B39}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/jao-hanhivaarajuuso
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Valuuttamuunnin\\Valuuttamuunnin.csproj
+		SccProjectName1 = Valuuttamuunnin
+		SccLocalPath1 = Valuuttamuunnin
+	EndGlobalSection
+EndGlobal
