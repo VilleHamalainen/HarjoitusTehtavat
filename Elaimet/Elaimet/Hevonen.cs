@@ -35,7 +35,7 @@ namespace Elaimet
                 nimi = value;
             }
         }
- public int Paino
+        public int Paino
         {
             get
             {
