@@ -19,12 +19,12 @@ namespace Elaimet
         }
         public Kissa(int cat_age, string cat_name) //constructor with parameters
         {
-            this.cat_name = name;
-            this.cat_age = cat_age;
+            this.cat_name = "Lucifer";
+            this.cat_age = 5;
         }
-        public void SetCatAge(string cat_name) //method
+        public void SetCatName(string cat_name) //method
         {
-            this.cat_name = name;
+            this.cat_name = cat_name;
         }
         public string ReturnCatName()
         {

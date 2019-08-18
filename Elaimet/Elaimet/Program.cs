@@ -26,6 +26,7 @@ namespace Elaimet
         {
             //Tässä luot luokasta olion
             Hevonen polle = new Hevonen();
+            Kissa Lucifer = new Kissa();
 
             //Tulosta olion nimi ja paino
             Console.WriteLine(polle.Nimi);
@@ -39,7 +40,11 @@ namespace Elaimet
 
             Console.ReadKey();
 
-            Kissa Lucifer = new Kissa
+           
+
+            Lucifer.cat_name = "Lucifer";
+            Console.WriteLine(Lucifer.cat_name);
+            Console.WriteLine(cat_age);
         }
     }
 }
