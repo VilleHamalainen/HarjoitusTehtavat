@@ -38,6 +38,8 @@ namespace Elaimet
             Console.WriteLine(polle.Paino);
 
             Console.ReadKey();
+
+            Kissa Lucifer = new Kissa
         }
     }
 }
