@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tehtävä1", "Elaimet\Teht�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElainLuokat", "ElainLuokat\ElainLuokat.csproj", "{FB4B760A-6E89-4175-965E-0863F14B141F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ika", "Ika\Ika.csproj", "{B168F13F-7AE5-4F58-8C8A-F88A14B9695C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB4B760A-6E89-4175-965E-0863F14B141F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4B760A-6E89-4175-965E-0863F14B141F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4B760A-6E89-4175-965E-0863F14B141F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B168F13F-7AE5-4F58-8C8A-F88A14B9695C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B168F13F-7AE5-4F58-8C8A-F88A14B9695C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B168F13F-7AE5-4F58-8C8A-F88A14B9695C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B168F13F-7AE5-4F58-8C8A-F88A14B9695C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

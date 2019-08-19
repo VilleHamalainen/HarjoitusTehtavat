@@ -31,7 +31,7 @@ namespace Elaimet
             Kissa Lucifer = new Kissa(7, "Lucifer");
             Kissa Aune = new Kissa(5, "Aune");
             Kissa Zeus = new Kissa(3, "Zeus");
-            Koira Max = new Koira();
+            Koira Haukkuli = new Koira(0, "Haukkuli");
 
             Console.WriteLine("1. Hevonen");
             Console.WriteLine("2. Kissa");
@@ -82,16 +82,24 @@ namespace Elaimet
                         Console.ReadKey();
                         Console.Clear();
 
-                        Console.Write("Anna kissalle uusi nimi: ");
-                        Zeus.SetCatName(Console.ReadLine());
-                        Console.WriteLine("Kissan nimi: " + Zeus.name);
+                        
 
                         Console.ReadKey();
                         break;
                     }
                 case 3:
                     {
+                        Console.WriteLine("Koiran nimi: " + Haukkuli.name);
+                        Haukkuli.SetDogName("Max");
+                        Console.WriteLine("Koiran nimi: " + Haukkuli.name);
 
+                        Console.ReadKey();
+                        Console.Clear();
+
+                        Haukkuli.SetDogName("musti");
+                        Console.WriteLine("Koiran nimi: " + Haukkuli.name);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     }
             }
