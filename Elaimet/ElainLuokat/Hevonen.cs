@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {   //Esitellään luokka eli class. Koodi olisi voinut olla Program.cs tiedostossa mutta selkeyden takia luomme jokaisen luokan
     //omaan tiedostoonsa
-    class Hevonen
+    public class Hevonen
     {
         private string nimi;
         private int paino;
@@ -18,8 +18,8 @@ namespace Elaimet
         {
             //Konstruktorissa voi olla oletusarvoja
             //Luokan sisällä voidaan käyttää privaatti kenttiä
-            nimi = "";
-            paino = 0;
+            nimi = "nuori polle";
+            paino = 50;
         }
         //getterillä ja setterillä annetaan luokan ulkopuolisille sovelluksille mahdollisuus 
         //asettaa tai hakea kenttiä
