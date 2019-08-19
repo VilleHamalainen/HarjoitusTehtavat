@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elain.cs" />
     <Compile Include="Hevonen.cs" />
     <Compile Include="Koira.cs" />
     <Compile Include="Kissa.cs" />

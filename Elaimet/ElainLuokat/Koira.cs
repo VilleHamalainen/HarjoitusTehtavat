@@ -36,7 +36,7 @@ namespace ElainLuokat
             return true;
         }
 
-        public void SetDogAge(string age) //method
+        public void SetDogAge(int age) //method
         {
             bool success = false;
 
@@ -51,7 +51,7 @@ namespace ElainLuokat
             return name;
         }
 
-        public int ReturnDogAge(int age)
+        public int ReturnDogAge()
         {
             return age;
         }

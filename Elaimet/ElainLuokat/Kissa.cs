@@ -36,7 +36,7 @@ namespace ElainLuokat
             return true;
         }
 
-        public void SetCatAge(string age) //method
+        public void SetCatAge(int age) //method
         {
             bool success = false;
 
@@ -51,7 +51,7 @@ namespace ElainLuokat
             return name;
         }
 
-        public int ReturnCatAge(int age)
+        public int ReturnCatAge()
         {
             return age;
         }
