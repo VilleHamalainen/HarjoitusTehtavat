@@ -6,24 +6,30 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public class Kissa //class name
+    public class Kissa: Nisakkaat //class name
     {
-        //fields
-        private int age;
-        public string name;
+        public Kissa()
+        {
 
+        }
+
+        public override void Aantele()
+        {
+            Console.WriteLine("Miau!");
+        }
+
+        /*
+
+
+        
         public int Age { get => age; set => age = value; }
-
-        public Kissa() { } //constructors
-
-
         public Kissa(int age, string name) //constructor with parameters
         {
             this.name = name;
             this.age = age;
         }
-
-        public bool SetCatName(string name) //method
+        
+        public bool SetName(string name) //method
         {
             
             if(name.ToLower() == "hilda")
@@ -36,24 +42,20 @@ namespace ElainLuokat
             return true;
         }
 
-        public void SetCatAge(int age) //method
+        public void SetAge(int age) //method
         {
-            bool success = false;
-
-            while(success == false)
-            success = int.TryParse(Console.ReadLine(), out this.age);
-            
+            this.age = age;
         }
 
 
-        public string ReturnCatName(string name)
+        public string ReturnName(string name)
         {
             return name;
         }
 
-        public int ReturnCatAge()
+        public int ReturnAge()
         {
             return age;
-        }
+        }*/
     }
 }

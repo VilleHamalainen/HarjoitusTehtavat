@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    class Elain
+    public abstract class Elain
     {
         private int age;
-        public string name;
+        private string name;
         private bool onLihanSyoja;
 
         //Asettaa eläimen iän
-        public void SetAnimalAge(int uusiIka) 
+        public void SetAge(int uusiIka) 
         {
             if (uusiIka >= 0)
             {
@@ -22,7 +22,7 @@ namespace ElainLuokat
         }
 
         //Asettaa eläimelle nimen
-        public void SetAnimalName(string name) 
+        public void SetName(string name) 
         {
             this.name = name;
         }
@@ -30,17 +30,18 @@ namespace ElainLuokat
         //Asettaa lihansyöjä
         public void SetCarnivore(bool onLihanSyoja)
         {
-
+            this.onLihanSyoja = onLihanSyoja;
+            
         }
 
         //palauttaa eläimen iän
-        public int ReturnAnimalAge() 
+        public int ReturnAge() 
         {
             return age;
         }
 
         //palauttaa eläimen nimen
-        public string ReturnAnimalName() 
+        public string ReturnName() 
         {
             return name;
         }
@@ -49,6 +50,11 @@ namespace ElainLuokat
         public bool ReturnCarnivore()
         {
             return onLihanSyoja;
+        }
+
+        public virtual void Aantele()
+        {
+            Console.WriteLine("Umph!");
         }
     }
 }

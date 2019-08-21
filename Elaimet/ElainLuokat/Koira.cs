@@ -6,24 +6,32 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public class Koira //class name
+    public class Koira: Nisakkaat //class name
     {
+        
+
+        public Koira()
+        {
+
+        }
+        public override void Aantele()
+        {
+            Console.WriteLine("Hau!");
+        }
+        //constructors
+        /*
         //fields
         private int age;
         public string name;
 
         public int Age { get => age; set => age = value; }
-
-        public Koira() { } //constructors
-
-
         public Koira(int age, string name) //constructor with parameters
         {
             this.name = name;
             this.age = age;
         }
 
-        public bool SetDogName(string name) //method
+        public bool SetName(string name) //method
         {
             
             if(name.ToLower() == "musti")
@@ -36,24 +44,20 @@ namespace ElainLuokat
             return true;
         }
 
-        public void SetDogAge(int age) //method
+        public void SetAge(int age) //method
         {
-            bool success = false;
-
-            while(success == false)
-            success = int.TryParse(Console.ReadLine(), out this.age);
-            
+            this.age = age;
         }
 
 
-        public string ReturnDogName(string name)
+        public string ReturnName(string name)
         {
             return name;
         }
 
-        public int ReturnDogAge()
+        public int ReturnAge()
         {
             return age;
-        }
+        }*/
     }
 }

@@ -17,29 +17,34 @@ namespace Ika
             for (int i = 0; i < 10; i++)
             {
                 Kissa kissa  = new Kissa();
-                kissa.SetCatAge(rnd.Next(0, 15));
+                kissa.SetAge(rnd.Next(0, 10));
                 Kissat.Add(kissa);
 
 
                 Koira koira = new Koira();
-                koira.SetDogAge(rnd.Next(1, 10));
+                koira.SetAge(rnd.Next(1, 15));
                 Koirat.Add(koira);
             }
             
             for(int i = 0; i < 10; i++)
             {
-                Console.Write("Kissa on: {0}, ",Kissat[i].ReturnCatAge());
-                Console.Write("Koira on: " + Koirat[i].ReturnDogAge());
+                Console.Write("Kissa on: {0}, ",Kissat[i].ReturnAge());
+                Console.Write("Koira on: " + Koirat[i].ReturnAge());
+                Console.Write("\n");
 
-
-                if (Kissat[i].ReturnCatAge() < Koirat[i].ReturnDogAge())
+                if (Kissat[i].ReturnAge() < Koirat[i].ReturnAge())
                 {
-                    Console.WriteLine("Koira on vanhempi");
+                    Console.WriteLine("Koira on vanhempi.");
                 }
-                else
+                else if(Koirat[i].ReturnAge() < Kissat[i].ReturnAge())
                 {
-                    Console.WriteLine("Kissa on vanhempi");
+                    Console.WriteLine("Kissa on vanhempi.");
                 }
+                else if (Koirat[i].ReturnAge() == Kissat[i].ReturnAge())
+                {
+                    Console.WriteLine("Kissa ja koira ovat samanikäisiä.");
+                }
+                Console.Write("\n");
             }
             
             Console.ReadKey();

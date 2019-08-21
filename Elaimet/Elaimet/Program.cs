@@ -1,4 +1,4 @@
-﻿using System;
+﻿sing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,11 +31,13 @@ namespace Elaimet
             Kissa Lucifer = new Kissa(7, "Lucifer");
             Kissa Aune = new Kissa(5, "Aune");
             Kissa Zeus = new Kissa(3, "Zeus");
+            Kissa Tyyne = new Kissa();
             Koira Haukkuli = new Koira(0, "Haukkuli");
 
             Console.WriteLine("1. Hevonen");
             Console.WriteLine("2. Kissa");
             Console.WriteLine("3. Koira");
+            Console.WriteLine("4. Tyyne-kissa");
 
 
             while (success == false)
@@ -63,7 +65,7 @@ namespace Elaimet
                         Console.WriteLine("Kissan nimi: " + Lucifer.name);
 
                         Console.Write("Anna kissalle uusi nimi: ");
-                        Lucifer.SetCatName(Console.ReadLine());
+                        Lucifer.SetName(Console.ReadLine());
                         Console.Clear();
 
                         Console.WriteLine("Kissan nimi: " + Lucifer.name);
@@ -77,7 +79,7 @@ namespace Elaimet
                         Console.Clear();
 
                         Console.Write("Anna kissalle uusi nimi: ");
-                        Zeus.SetCatName(Console.ReadLine());
+                        Zeus.SetName(Console.ReadLine());
                         Console.WriteLine("Kissan nimi: " + Zeus.name);
                         Console.ReadKey();
                         Console.Clear();
@@ -90,16 +92,23 @@ namespace Elaimet
                 case 3:
                     {
                         Console.WriteLine("Koiran nimi: " + Haukkuli.name);
-                        Haukkuli.SetDogName("Max");
+                        Haukkuli.SetName("Max");
                         Console.WriteLine("Koiran nimi: " + Haukkuli.name);
 
                         Console.ReadKey();
                         Console.Clear();
 
-                        Haukkuli.SetDogName("musti");
+                        Haukkuli.SetName("musti");
                         Console.WriteLine("Koiran nimi: " + Haukkuli.name);
                         Console.ReadKey();
                         Console.Clear();
+                        break;
+                    }
+                case 4:
+                    {
+                        int uusiIka = int.Parse(Console.ReadLine());
+
+                        Kissa.SetAge(uusiIka);
                         break;
                     }
             }
