@@ -11,27 +11,46 @@ namespace Tehtävä_11
     {
         static void Main(string[] args)
         {
-            List<Kissa> Kissat = new List<Kissa>();
-            List<Koira> Koirat = new List<Koira>();
-            List<Papukaija> Papukaijat = new List<Papukaija>();
-            List<Hevonen> Hevoset = new List<Hevonen>();
+            List<Elain> elaimet = new List<Elain>();
 
             Random rnd = new Random();
+            int indexHorse = 0;
+            int indexOthers = 1;
             for (int i = 0; i < 10; i++)
             {
-
-                if(i % 4 == 0)
+                if(indexHorse == 3)
                 {
-                    Hevonen hevonen = new Hevonen();
+                    Hevonen hevonen = new Hevonen("Hepo", 3, 20, true);
+                    elaimet.Add(hevonen);
+                    indexHorse = 0;
+                    indexOthers++;
+                    if(indexOthers == 4)
+                    {
+                        indexOthers = 1;
+                    }
                 }
-                Kissa kissa = new Kissa();
-                kissa.SetAge(rnd.Next(0, 10));
-                Kissat.Add(kissa);
-
-
-                Koira koira = new Koira();
-                koira.SetAge(rnd.Next(1, 15));
-                Koirat.Add(koira);
+                else if (indexOthers == 1)
+                {
+                    Kissa kissa = new Kissa("Milo", 5, 26, true);
+                    kissa.SetAge(rnd.Next(0, 10));
+                    elaimet.Add(kissa);
+                    
+                }
+                else if(indexOthers == 2)
+                {
+                    Koira koira = new Koira("Musti", 7, 24,true);
+                    koira.SetAge(rnd.Next(1, 15));
+                    elaimet.Add(koira);
+                }
+                else
+                {
+                    Papukaija papukaija = new Papukaija("Arnold", 1, 8, 2);
+                    elaimet.Add(papukaija);
+                    indexOthers = 1;
+                    indexHorse++;
+                }
+                indexHorse++;
+                indexOthers++;
             }
         }
     }

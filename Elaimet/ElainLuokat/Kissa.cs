@@ -12,6 +12,10 @@ namespace ElainLuokat
         {
 
         }
+        public Kissa(string nimi, int ika, int teeth, bool onLihanSyoja)
+        {
+
+        }
 
         public override void Aantele()
         {

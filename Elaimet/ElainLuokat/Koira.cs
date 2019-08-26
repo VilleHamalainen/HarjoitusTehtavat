@@ -14,6 +14,10 @@ namespace ElainLuokat
         {
 
         }
+        public Koira(string nimi, int ika, int teeth, bool onLihanSyoja)
+        {
+
+        }
         public override void Aantele()
         {
             Console.WriteLine("Hau!");
