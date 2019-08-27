@@ -8,6 +8,7 @@ namespace ElainLuokat
 {
     public class Kissa: Nisakkaat //class name
     {
+        private List<Kissa> pennut = new List<Kissa>();
         public Kissa()
         {
 
@@ -22,44 +23,14 @@ namespace ElainLuokat
             Console.WriteLine("Miau!");
         }
 
-        /*
-
-
-        
-        public int Age { get => age; set => age = value; }
-        public Kissa(int age, string name) //constructor with parameters
+        public void LisaaPentu()
         {
-            this.name = name;
-            this.age = age;
+             kissa kissa new Kissa
+        }
+        public List<Kissa> Pennut()
+        {
+            return pennut;
         }
         
-        public bool SetName(string name) //method
-        {
-            
-            if(name.ToLower() == "hilda")
-            {
-                Console.WriteLine("Nimenvaihto epäonnistui");
-                return false;   
-            }
-            this.name = name;
-            Console.WriteLine("Nimenvaihto onnistui");
-            return true;
-        }
-
-        public void SetAge(int age) //method
-        {
-            this.age = age;
-        }
-
-
-        public string ReturnName(string name)
-        {
-            return name;
-        }
-
-        public int ReturnAge()
-        {
-            return age;
-        }*/
     }
 }

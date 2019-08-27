@@ -19,7 +19,7 @@ namespace ElainLuokat
             //Konstruktorissa voi olla oletusarvoja
             //Luokan sisällä voidaan käyttää privaatti kenttiä
             nimi = "nuori polle";
-            paino = 50;
+            paino = 50;     
         }
 
         public Hevonen(string nimi, int ika, int teeth, bool onLihanSyoja)

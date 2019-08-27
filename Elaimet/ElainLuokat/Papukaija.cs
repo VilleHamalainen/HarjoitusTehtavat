@@ -12,7 +12,7 @@ namespace ElainLuokat
         {
 
         }
-        public Papukaija(string nimi, int ika, int teeth, int feathers)
+        public Papukaija(string nimi, int ika, bool onLihanSyoja, int feathers)
         {
 
         }

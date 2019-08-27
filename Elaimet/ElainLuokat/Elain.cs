@@ -12,6 +12,22 @@ namespace ElainLuokat
         private string name;
         private bool onLihanSyoja;
 
+        public Elain()
+        {
+            name = "Eläin";
+            age = 0;
+            onLihanSyoja = false;
+
+
+        }
+        public Elain(string name, int age, bool onLihanSyoja)
+        {
+                
+        }
+
+
+
+
         //Asettaa eläimen iän
         public void SetAge(int uusiIka) 
         {
