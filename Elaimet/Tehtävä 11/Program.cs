@@ -12,11 +12,13 @@ namespace Tehtävä_11
         static void Main(string[] args)
         {
             List<Elain> elaimet = new List<Elain>();
+            Kissa katti = new Kissa();
+            katti.SetName("miuku");
 
             Random rnd = new Random();
             int indexHorse = 0;
             int indexOthers = 1;
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 if (indexHorse == 3)
                 {
@@ -72,6 +74,9 @@ namespace Tehtävä_11
                 indexHorse++;
                 indexOthers++;
             }
+            katti.LisaaPentu();
+            katti.LisaaPentu();
+       
 
             foreach (Nisakkaat elain in elaimet.OfType<Nisakkaat>())
             {
@@ -82,6 +87,15 @@ namespace Tehtävä_11
             {
                 Console.WriteLine("Nimi: {0}\nIkä: {1}\nLihansyöjä: {2}\nHöyhenpeitteen paksuus (cm): {3}", elain.ReturnName(), elain.ReturnAge(), elain.ReturnCarnivore(), elain.ReturnFeathers());
             }
+
+            foreach(Kissa mirri in elaimet.OfType<Kissa>())
+            {
+                foreach(Kissa pentu in mirri.Pennut)
+                {
+                    Console.WriteLine(pentu.ReturnAge());
+                }
+            }
+
             Console.ReadKey();
         }
     }
