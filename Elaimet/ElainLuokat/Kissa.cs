@@ -6,54 +6,47 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public class Kissa //class name
+    public class Kissa: Nisakkaat //class name
     {
-        //fields
-        private int age;
-        public string name;
-
-        public int Age { get => age; set => age = value; }
-
-        public Kissa() { } //constructors
-
-
-        public Kissa(int age, string name) //constructor with parameters
+        private List<Kissa> pennut = new List<Kissa>();
+        private Kissa emo;
+        public Kissa()
         {
-            this.name = name;
-            this.age = age;
+
+        }
+   
+
+        public Kissa(string nimi, int ika, int teeth, bool onLihanSyoja)
+        {
+
+        }
+            
+        public override void Aantele()
+        {
+            Console.WriteLine("Miau!");
         }
 
-        public bool SetCatName(string name) //method
+        public void LisaaPentu()
         {
-            
-            if(name.ToLower() == "hilda")
+            Console.WriteLine("Kuinka monta pentua?");
+            int input = int.Parse(Console.ReadLine());
+            for(int i = 1; i <= input; i++)
             {
-                Console.WriteLine("Nimenvaihto epäonnistui");
-                return false;   
+                Kissa pentu = new Kissa();
+                pentu.Emo = this;
+                
+                pennut.Add(pentu);  
             }
-            this.name = name;
-            Console.WriteLine("Nimenvaihto onnistui");
-            return true;
-        }
-
-        public void SetCatAge(int age) //method
-        {
-            bool success = false;
-
-            while(success == false)
-            success = int.TryParse(Console.ReadLine(), out this.age);
             
         }
-
-
-        public string ReturnCatName(string name)
+        public List<Kissa> Pennut
         {
-            return name;
+            get
+            {
+                return pennut;
+            }
+            
         }
-
-        public int ReturnCatAge()
-        {
-            return age;
-        }
+        public Kissa Emo { get => emo; set => emo = value; }
     }
 }

@@ -6,54 +6,22 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public class Koira //class name
+    public class Koira: Nisakkaat //class name
     {
-        //fields
-        private int age;
-        public string name;
+        
 
-        public int Age { get => age; set => age = value; }
-
-        public Koira() { } //constructors
-
-
-        public Koira(int age, string name) //constructor with parameters
+        public Koira()
         {
-            this.name = name;
-            this.age = age;
-        }
 
-        public bool SetDogName(string name) //method
+        }
+        public Koira(string nimi, int ika, int teeth, bool onLihanSyoja)
         {
-            
-            if(name.ToLower() == "musti")
-            {
-                Console.WriteLine("Nimenvaihto epäonnistui");
-                return false;   
-            }
-            this.name = name;
-            Console.WriteLine("Nimenvaihto onnistui");
-            return true;
-        }
 
-        public void SetDogAge(int age) //method
+        }
+        public override void Aantele()
         {
-            bool success = false;
-
-            while(success == false)
-            success = int.TryParse(Console.ReadLine(), out this.age);
-            
+            Console.WriteLine("Hau!");
         }
-
-
-        public string ReturnDogName(string name)
-        {
-            return name;
-        }
-
-        public int ReturnDogAge()
-        {
-            return age;
-        }
+     
     }
 }
