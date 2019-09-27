@@ -27,7 +27,7 @@ namespace Alkuluvut
 
                 if (flag == 0) Console.WriteLine(i); }
 
-
+            Console.ReadKey(); 
 
         }
     }
