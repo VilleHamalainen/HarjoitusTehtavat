@@ -79,9 +79,35 @@ namespace Forms1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
+            textBox2.Text = "[Syötä elokuvan nimi]";
             textBox3.Text = DateTime.Today.Year.ToString();
-            textBox2.Text = "";
+            textBox4.Text = "0";
+        }
+
+        private void poistuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int result;   
+            if (string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Et ole syöttänyt mitään julkaisuvuosi-kenttään!");
+            }
+            else if (string.IsNullOrWhiteSpace(textBox4.Text))
+            {
+                MessageBox.Show("Et ole syöttänyt mitään kesto-kenttään!");
+            }
+            else if (!int.TryParse(textBox3.Text, out result))
+            {
+                MessageBox.Show("Julkaisuvuosi ei ole vain numeroita!");
+            }
+            else if (!int.TryParse(textBox4.Text, out result))
+            {
+                MessageBox.Show("kesto ei ole vain numeroita!");
+            }
         }
     }
 }
