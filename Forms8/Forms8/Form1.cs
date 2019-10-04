@@ -21,12 +21,15 @@ namespace Forms8
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Text = "";
+            label2.Text = "";
+            label6.Text = "";
             Random rnd = new Random();
-            int[] labels = {1,2,3,4,5,6,7,8,9,10/*,11,
+            int[] labels = {1,2,3,4,5,6,7,8,9,10,11,
             12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,
-            27,28,29,30,31,32,33,34,35,36,37,38,39,40*/};
+            27,28,29,30,31,32,33,34,35,36,37,38,39,40};
             int[] lottoNum = new int[7];
             int[] userInput = new int[7];
+            int oikein = 0;
 
             //Asettaa käyttäjän numerot userInput Arrayyn.
             foreach(NumericUpDown input in groupBox2.Controls.OfType<NumericUpDown>())
@@ -41,25 +44,34 @@ namespace Forms8
                 label2.Text += values + ", ";
             }
             
+            //Luo lottorivin
             for (int i = 0; i < 7; i++)
             {
-                rand_Num = rnd.Next(0, 9);
+                rand_Num = rnd.Next(1, 40);
                 while(labels[rand_Num] == 0)
                 {
-                    rand_Num = rnd.Next(0, 9);
+                    rand_Num = rnd.Next(1, 40);
                 }
                 lottoNum.SetValue(labels[rand_Num], i);
                 labels[rand_Num] = 0;
             }
-
+            //Printtaa lottorivin
             foreach(var values in lottoNum)
             {
                 label1.Text += values + ", ";
             }
-            foreach ()
+            foreach (int inputNum in userInput)
             {
-
+                foreach(int lottoNums in lottoNum)
+                {
+                    if (inputNum == lottoNums)
+                    {
+                        oikein++;
+                    }
+                }
+                
             }
+            label6.Text = oikein.ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
