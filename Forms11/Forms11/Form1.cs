@@ -57,12 +57,7 @@ namespace Forms11
                             new SolidBrush(Color.Black), 8, 30);
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            piste = new Point(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
-            Invalidate();
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -85,6 +80,30 @@ namespace Forms11
 
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.W)
+            {
+                piste.Y = piste.Y - 10;
+            }
+            else if (e.KeyCode == Keys.A)
+            {
+                piste.X = piste.X - 10;
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                piste.Y = piste.Y + 10;
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                piste.X = piste.X + 10;
+            }
+            Invalidate();
+        }
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Invalidate();
+        }
     }
 }
