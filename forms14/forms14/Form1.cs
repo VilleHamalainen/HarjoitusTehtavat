@@ -14,6 +14,7 @@ namespace forms14
     {
         Point piste = new Point(0, 0);
         Bitmap image;
+        Pen blackPen = new Pen(Color.Black, 3);
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace forms14
         private void Form1_Load(object sender, EventArgs e)
         {
             image = new Bitmap(Properties.Resources.hessu);
+            
             image.MakeTransparent();
         }
 
