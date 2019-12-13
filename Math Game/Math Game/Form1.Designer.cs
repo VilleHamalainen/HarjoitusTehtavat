@@ -34,15 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.yesDivFraction = new System.Windows.Forms.RadioButton();
-            this.noDivFraction = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.yesFraction = new System.Windows.Forms.RadioButton();
@@ -54,13 +50,17 @@
             this.radioRandom = new System.Windows.Forms.RadioButton();
             this.radioDivision = new System.Windows.Forms.RadioButton();
             this.radioMultiplication = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.noDivFraction = new System.Windows.Forms.RadioButton();
+            this.yesDivFraction = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -118,7 +118,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.textBox2);
+            this.groupBox7.Controls.Add(this.txtMax);
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Location = new System.Drawing.Point(171, 145);
             this.groupBox7.Name = "groupBox7";
@@ -126,12 +126,12 @@
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             // 
-            // textBox2
+            // txtMax
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtMax.Location = new System.Drawing.Point(20, 74);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(124, 20);
+            this.txtMax.TabIndex = 4;
             // 
             // label5
             // 
@@ -145,7 +145,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.txtMin);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Location = new System.Drawing.Point(6, 145);
             this.groupBox6.Name = "groupBox6";
@@ -153,12 +153,12 @@
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             // 
-            // textBox1
+            // txtMin
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtMin.Location = new System.Drawing.Point(20, 74);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(124, 20);
+            this.txtMin.TabIndex = 4;
             // 
             // label2
             // 
@@ -168,46 +168,6 @@
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Minimum number:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.yesDivFraction);
-            this.groupBox4.Controls.Add(this.noDivFraction);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(336, 19);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(159, 120);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            // 
-            // yesDivFraction
-            // 
-            this.yesDivFraction.AutoSize = true;
-            this.yesDivFraction.Location = new System.Drawing.Point(20, 54);
-            this.yesDivFraction.Name = "yesDivFraction";
-            this.yesDivFraction.Size = new System.Drawing.Size(43, 17);
-            this.yesDivFraction.TabIndex = 2;
-            this.yesDivFraction.Text = "Yes";
-            this.yesDivFraction.UseVisualStyleBackColor = true;
-            // 
-            // noDivFraction
-            // 
-            this.noDivFraction.AutoSize = true;
-            this.noDivFraction.Location = new System.Drawing.Point(91, 54);
-            this.noDivFraction.Name = "noDivFraction";
-            this.noDivFraction.Size = new System.Drawing.Size(39, 17);
-            this.noDivFraction.TabIndex = 1;
-            this.noDivFraction.Text = "No";
-            this.noDivFraction.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Allow fractions in division?";
             // 
             // groupBox3
             // 
@@ -325,6 +285,46 @@
             this.radioMultiplication.Text = "Multiplication ( * )";
             this.radioMultiplication.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Allow fractions in division?";
+            // 
+            // noDivFraction
+            // 
+            this.noDivFraction.AutoSize = true;
+            this.noDivFraction.Location = new System.Drawing.Point(91, 54);
+            this.noDivFraction.Name = "noDivFraction";
+            this.noDivFraction.Size = new System.Drawing.Size(39, 17);
+            this.noDivFraction.TabIndex = 1;
+            this.noDivFraction.Text = "No";
+            this.noDivFraction.UseVisualStyleBackColor = true;
+            // 
+            // yesDivFraction
+            // 
+            this.yesDivFraction.AutoSize = true;
+            this.yesDivFraction.Location = new System.Drawing.Point(20, 54);
+            this.yesDivFraction.Name = "yesDivFraction";
+            this.yesDivFraction.Size = new System.Drawing.Size(43, 17);
+            this.yesDivFraction.TabIndex = 2;
+            this.yesDivFraction.Text = "Yes";
+            this.yesDivFraction.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.yesDivFraction);
+            this.groupBox4.Controls.Add(this.noDivFraction);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Location = new System.Drawing.Point(336, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(159, 120);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,14 +339,14 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -358,14 +358,10 @@
         private System.Windows.Forms.RadioButton noNegative;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioAddition;
         private System.Windows.Forms.RadioButton radioSubtraction;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton yesDivFraction;
-        private System.Windows.Forms.RadioButton noDivFraction;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton yesFraction;
         private System.Windows.Forms.RadioButton noFraction;
@@ -373,12 +369,16 @@
         private System.Windows.Forms.RadioButton radioDivision;
         private System.Windows.Forms.RadioButton radioMultiplication;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioRandom;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton yesDivFraction;
+        private System.Windows.Forms.RadioButton noDivFraction;
+        private System.Windows.Forms.Label label4;
     }
 }
 
