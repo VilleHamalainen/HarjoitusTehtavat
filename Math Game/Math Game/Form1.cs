@@ -20,17 +20,30 @@ namespace Math_Game
     }
     public partial class Form1 : Form
     {
-        bool Negative = false, fraction = false, divFraction = false, parsed = false; 
+        bool Negative = false, parsed = false; 
         string msgSettings = "Please set all values in settings";
         int opNum = 0;
-        int minNum = 0, maxNum = 0;
 
         
 
         public Form1()
         {
             InitializeComponent();
+            
         }
+
+        int correct = 0, wrong = 0;
+
+        int minNum = 0, maxNum = 0;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            correct_label.Text = $"Oikein: {correct}";
+            wrong_label.Text = $"Väärin: {wrong}";
+        }
+
+        public int Correct { get => correct; set => correct = value; }
+        public int Wrong { get => wrong; set => wrong = value; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,7 +55,7 @@ namespace Math_Game
                 { Negative = false; }
             else { MessageBox.Show(msgSettings); }
 
-            if (yesFraction.Checked)
+            /*if (yesFraction.Checked)
             { fraction = true; }
             else if (noFraction.Checked)
             { fraction = false; }
@@ -53,7 +66,7 @@ namespace Math_Game
             else if (noDivFraction.Checked)
             { divFraction = false; }
             else { MessageBox.Show(msgSettings); }
-
+            */
             
             while (parsed == false)
             {
@@ -106,8 +119,6 @@ namespace Math_Game
             using (var CalcForm = new CalcForm(this))
             {
                 CalcForm.Negative = Negative;
-                CalcForm.Fract = fraction;
-                CalcForm.DivFract = divFraction;
 
                 CalcForm.MinNum = minNum;
                 CalcForm.MaxNum = maxNum;
@@ -115,6 +126,7 @@ namespace Math_Game
                 CalcForm.OpNumber = opNum;
 
                 CalcForm.ShowDialog();
+                Form1_Load(sender, e);
             }
         }
         
