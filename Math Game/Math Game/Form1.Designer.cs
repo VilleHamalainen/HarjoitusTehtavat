@@ -364,7 +364,7 @@
             // 
             this.groupBox9.Controls.Add(this.groupBox3);
             this.groupBox9.Controls.Add(this.groupBox4);
-            this.groupBox9.Location = new System.Drawing.Point(179, 400);
+            this.groupBox9.Location = new System.Drawing.Point(179, 371);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(360, 166);
             this.groupBox9.TabIndex = 15;
@@ -376,7 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 606);
+            this.ClientSize = new System.Drawing.Size(551, 408);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox5);

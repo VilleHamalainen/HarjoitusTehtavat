@@ -20,7 +20,7 @@ namespace Math_Game
     }
     public partial class Form1 : Form
     {
-        bool Negative = false, parsed = false; 
+        bool Negative = false, parsedMin = false, parsedMax = false; 
         string msgSettings = "Please set all values in settings";
         int opNum = 0;
 
@@ -55,79 +55,72 @@ namespace Math_Game
                 { Negative = false; }
             else { MessageBox.Show(msgSettings); }
 
-            /*if (yesFraction.Checked)
-            { fraction = true; }
-            else if (noFraction.Checked)
-            { fraction = false; }
-            else { MessageBox.Show(msgSettings); }
-
-            if (yesDivFraction.Checked)
-            { divFraction = true; }
-            else if (noDivFraction.Checked)
-            { divFraction = false; }
-            else { MessageBox.Show(msgSettings); }
-            */
+            parsedMin = int.TryParse(txtMin.Text, out minNum);
+            if (parsedMin == false)
+            {
+                MessageBox.Show("Input a valid min number.");
+            }
+            txtMin.Clear();
             
-            while (parsed == false)
+            parsedMax = int.TryParse(txtMax.Text, out maxNum);
+            if(parsedMax == false)
             {
-                parsed = int.TryParse(txtMin.Text, out minNum);
-                if (parsed == false)
-                {
-                    MessageBox.Show("Input only numbers.");
-                }
+                MessageBox.Show("Input a valid max number.");
             }
-            parsed = false;
-            while (parsed == false)
-            {
-                parsed = int.TryParse(txtMax.Text, out maxNum);
-                if(parsed == false)
-                {
-                    MessageBox.Show("Input only numbers.");
-                }
-            }
+            txtMax.Clear();
 
 
 
             //Launch options
 
-            if (radioAddition.Checked)
+            if (parsedMin == true && parsedMax == true)
             {
-                opNum =  (int)OperatorNum.Addition;
-            }
+                if (radioAddition.Checked)
+                {
+                    opNum = (int)OperatorNum.Addition;
+                }
 
-            else if (radioSubtraction.Checked)
-            {
-                opNum = (int)OperatorNum.Subtraction;
-            }
+                else if (radioSubtraction.Checked)
+                {
+                    opNum = (int)OperatorNum.Subtraction;
+                }
 
-            else if (radioMultiplication.Checked)
-            {
-                opNum = (int)OperatorNum.Multiplication;
-            }
+                else if (radioMultiplication.Checked)
+                {
+                    opNum = (int)OperatorNum.Multiplication;
+                }
 
-            else if (radioDivision.Checked)
-            {
-                opNum = (int)OperatorNum.Division;
-            }
+                else if (radioDivision.Checked)
+                {
+                    opNum = (int)OperatorNum.Division;
+                }
 
-            else if (radioRandom.Checked)
-            {
-                opNum = (int)OperatorNum.Random;
+                else if (radioRandom.Checked)
+                {
+                    opNum = (int)OperatorNum.Random;
+                }
+
+                using (var CalcForm = new CalcForm(this))
+                {
+                    CalcForm.Negative = Negative;
+
+                    CalcForm.MinNum = minNum;
+                    CalcForm.MaxNum = maxNum;
+
+                    CalcForm.OpNumber = opNum;
+
+                    CalcForm.ShowDialog();
+                    Form1_Load(sender, e);
+                }
             }
+            
 
             
-            using (var CalcForm = new CalcForm(this))
-            {
-                CalcForm.Negative = Negative;
 
-                CalcForm.MinNum = minNum;
-                CalcForm.MaxNum = maxNum;
-
-                CalcForm.OpNumber = opNum;
-
-                CalcForm.ShowDialog();
-                Form1_Load(sender, e);
-            }
+            
+            
+            parsedMin = false;
+            parsedMax = false;
         }
         
     }
