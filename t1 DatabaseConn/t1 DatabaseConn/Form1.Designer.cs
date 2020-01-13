@@ -35,20 +35,24 @@
             this.open_Conn = new System.Windows.Forms.Button();
             this.empty_btn = new System.Windows.Forms.Button();
             this.remove_btn = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 76);
+            this.textBox1.Location = new System.Drawing.Point(13, 41);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 51);
+            this.button1.Location = new System.Drawing.Point(159, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 19);
             this.button1.TabIndex = 1;
@@ -59,14 +63,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(111, 145);
+            this.dataGridView1.Location = new System.Drawing.Point(111, 218);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(193, 120);
+            this.button2.Location = new System.Drawing.Point(193, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 19);
             this.button2.TabIndex = 3;
@@ -76,13 +80,13 @@
             // 
             // open_Conn
             // 
-            this.open_Conn.Location = new System.Drawing.Point(30, 38);
+            this.open_Conn.BackColor = System.Drawing.Color.Red;
+            this.open_Conn.Location = new System.Drawing.Point(12, 14);
             this.open_Conn.Name = "open_Conn";
             this.open_Conn.Size = new System.Drawing.Size(75, 45);
             this.open_Conn.TabIndex = 4;
             this.open_Conn.Text = "Open connection";
-            this.open_Conn.UseVisualStyleBackColor = true;
-            this.open_Conn.Click += new System.EventHandler(this.open_Conn_Click);
+            this.open_Conn.UseVisualStyleBackColor = false;
             // 
             // empty_btn
             // 
@@ -104,23 +108,64 @@
             this.remove_btn.UseVisualStyleBackColor = true;
             this.remove_btn.Click += new System.EventHandler(this.remove_btn_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(94, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(77, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Opiskelija";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(91, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Opiskelijaryhmä";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(111, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(240, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.remove_btn);
             this.Controls.Add(this.empty_btn);
             this.Controls.Add(this.open_Conn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -133,6 +178,10 @@
         private System.Windows.Forms.Button open_Conn;
         private System.Windows.Forms.Button empty_btn;
         private System.Windows.Forms.Button remove_btn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
