@@ -47,20 +47,22 @@ namespace t1_DatabaseConn
             try
             {
                 SqlCommand command = new SqlCommand("SELECT opryhma FROM opryhma", myConnection);
+                
                 command.ExecuteNonQuery();
 
-                SqlDataReader myReader = command.ExecuteReader();
 
+                SqlDataReader myReader = command.ExecuteReader();
                 while (myReader.Read())
                 {
                     ryhma.Add(myReader["opryhma"].ToString());
                 }
+                myReader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
+            
             comboBox1.DataSource = ryhma;
         }
 
@@ -69,22 +71,29 @@ namespace t1_DatabaseConn
         private void button1_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand("Command String", myConnection);
+            
             string Nimi = textBox1.Text;
 
             string ryhmaSelected = comboBox1.SelectedItem.ToString();
-
+            MessageBox.Show(ryhmaSelected);
             
+
             //Getting currently selected Group
-            command.CommandText = "SELECT Id FROM opryhma WHERE opryhma = @ryhmaSelected";
-            command.Parameters.AddWithValue("@ryhmaSelected", ryhmaSelected);
+            
             try
             {
+                command.CommandText = "SELECT Id FROM opryhma WHERE opryhma = @ryhmaSelected";
+                command.Parameters.AddWithValue("@ryhmaSelected", ryhmaSelected);
+                
+                command.ExecuteNonQuery();
                 SqlDataReader myReader = command.ExecuteReader();
                 while (myReader.Read())
                 {
                     opryhma = myReader["Id"].ToString();
                 }
-                command.ExecuteNonQuery();
+                myReader.Close();
+
+                MessageBox.Show(myReader.IsClosed.ToString());
             }
             catch (Exception ex)
             {
@@ -94,19 +103,22 @@ namespace t1_DatabaseConn
 
 
             //Adding a student with a group
-            command.CommandText = "INSERT INTO Nimi (nimi), (opryhma) " +
-                        "Values (@nimi), (@opryhma)";
-            command.Parameters.AddWithValue("@nimi", Nimi);
-            command.Parameters.AddWithValue("@opryhma", opryhma);
+            
             try
             {
+                command.CommandText = "INSERT INTO Nimi ([nimi], [opryhma]) " +
+                        "Values (@nimi, @opryhma)";
+                command.Parameters.AddWithValue("@nimi", Nimi);
+                command.Parameters.AddWithValue("@opryhma", opryhma);
+
                 command.ExecuteNonQuery();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
+            
         }
 
 
