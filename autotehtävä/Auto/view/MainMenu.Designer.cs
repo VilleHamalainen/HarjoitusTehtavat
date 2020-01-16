@@ -31,7 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testaaTietokantayhteyttäToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.test_DBConnection = new System.Windows.Forms.ToolStripMenuItem();
             this.mittarilukema_text = new System.Windows.Forms.TextBox();
             this.tilavuus_text = new System.Windows.Forms.TextBox();
             this.hinta_text = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(397, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(287, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,34 +71,35 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testaaTietokantayhteyttäToolStripMenuItem});
+            this.test_DBConnection});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // testaaTietokantayhteyttäToolStripMenuItem
+            // test_DBConnection
             // 
-            this.testaaTietokantayhteyttäToolStripMenuItem.Name = "testaaTietokantayhteyttäToolStripMenuItem";
-            this.testaaTietokantayhteyttäToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.testaaTietokantayhteyttäToolStripMenuItem.Text = "Testaa tietokantayhteyttä";
+            this.test_DBConnection.Name = "test_DBConnection";
+            this.test_DBConnection.Size = new System.Drawing.Size(205, 22);
+            this.test_DBConnection.Text = "Testaa tietokantayhteyttä";
+            this.test_DBConnection.Click += new System.EventHandler(this.test_DBConnection_Click);
             // 
             // mittarilukema_text
             // 
-            this.mittarilukema_text.Location = new System.Drawing.Point(12, 102);
+            this.mittarilukema_text.Location = new System.Drawing.Point(11, 57);
             this.mittarilukema_text.Name = "mittarilukema_text";
             this.mittarilukema_text.Size = new System.Drawing.Size(74, 20);
             this.mittarilukema_text.TabIndex = 1;
             // 
             // tilavuus_text
             // 
-            this.tilavuus_text.Location = new System.Drawing.Point(104, 102);
+            this.tilavuus_text.Location = new System.Drawing.Point(103, 57);
             this.tilavuus_text.Name = "tilavuus_text";
             this.tilavuus_text.Size = new System.Drawing.Size(74, 20);
             this.tilavuus_text.TabIndex = 2;
             // 
             // hinta_text
             // 
-            this.hinta_text.Location = new System.Drawing.Point(198, 102);
+            this.hinta_text.Location = new System.Drawing.Point(197, 57);
             this.hinta_text.Name = "hinta_text";
             this.hinta_text.Size = new System.Drawing.Size(74, 20);
             this.hinta_text.TabIndex = 3;
@@ -106,7 +107,7 @@
             // Merkki_cBox
             // 
             this.Merkki_cBox.FormattingEnabled = true;
-            this.Merkki_cBox.Location = new System.Drawing.Point(12, 176);
+            this.Merkki_cBox.Location = new System.Drawing.Point(11, 131);
             this.Merkki_cBox.Name = "Merkki_cBox";
             this.Merkki_cBox.Size = new System.Drawing.Size(121, 21);
             this.Merkki_cBox.TabIndex = 4;
@@ -114,7 +115,7 @@
             // Malli_cBox
             // 
             this.Malli_cBox.FormattingEnabled = true;
-            this.Malli_cBox.Location = new System.Drawing.Point(152, 176);
+            this.Malli_cBox.Location = new System.Drawing.Point(151, 131);
             this.Malli_cBox.Name = "Malli_cBox";
             this.Malli_cBox.Size = new System.Drawing.Size(120, 21);
             this.Malli_cBox.TabIndex = 5;
@@ -122,7 +123,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 86);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 6;
@@ -131,7 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 87);
+            this.label2.Location = new System.Drawing.Point(97, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 7;
@@ -140,7 +141,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 85);
+            this.label3.Location = new System.Drawing.Point(218, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 8;
@@ -149,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 159);
+            this.label4.Location = new System.Drawing.Point(57, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 9;
@@ -158,7 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(202, 158);
+            this.label5.Location = new System.Drawing.Point(201, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 10;
@@ -166,7 +167,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(51, 245);
+            this.dateTimePicker1.Location = new System.Drawing.Point(44, 199);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 11;
@@ -174,7 +175,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(87, 229);
+            this.label6.Location = new System.Drawing.Point(80, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 13);
             this.label6.TabIndex = 12;
@@ -182,7 +183,7 @@
             // 
             // uusiAuto_btn
             // 
-            this.uusiAuto_btn.Location = new System.Drawing.Point(51, 271);
+            this.uusiAuto_btn.Location = new System.Drawing.Point(44, 225);
             this.uusiAuto_btn.Name = "uusiAuto_btn";
             this.uusiAuto_btn.Size = new System.Drawing.Size(75, 23);
             this.uusiAuto_btn.TabIndex = 13;
@@ -191,7 +192,7 @@
             // 
             // Tallenna
             // 
-            this.Tallenna.Location = new System.Drawing.Point(176, 271);
+            this.Tallenna.Location = new System.Drawing.Point(169, 225);
             this.Tallenna.Name = "Tallenna";
             this.Tallenna.Size = new System.Drawing.Size(75, 23);
             this.Tallenna.TabIndex = 14;
@@ -200,7 +201,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(70, 322);
+            this.button1.Location = new System.Drawing.Point(63, 276);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -209,7 +210,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(155, 322);
+            this.button2.Location = new System.Drawing.Point(148, 276);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
@@ -220,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 357);
+            this.ClientSize = new System.Drawing.Size(287, 316);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tallenna);
@@ -254,7 +255,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testaaTietokantayhteyttäToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem test_DBConnection;
         private System.Windows.Forms.TextBox mittarilukema_text;
         private System.Windows.Forms.TextBox tilavuus_text;
         private System.Windows.Forms.TextBox hinta_text;

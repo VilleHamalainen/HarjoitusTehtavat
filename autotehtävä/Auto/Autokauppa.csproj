@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\KaupanLogiikka.cs" />
+    <Compile Include="model\AutonMalli.cs" />
+    <Compile Include="model\AutonMerkki.cs" />
     <Compile Include="model\DatabaseHallinta.cs" />
     <Compile Include="model\Auto.cs" />
     <Compile Include="Program.cs" />
