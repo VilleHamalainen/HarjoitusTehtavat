@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autokauppa.model
 {
-    class AutonMalli
+    public class AutonMalli
     {
         private int id;
         private string malliNimi;

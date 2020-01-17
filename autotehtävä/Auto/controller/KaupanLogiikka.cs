@@ -14,6 +14,12 @@ namespace Autokauppa.controller
     {
         DatabaseHallinta dbModel = new DatabaseHallinta();
 
+        public bool connectDB()
+        {
+            return dbModel.connectDatabase();
+        }
+
+
         public bool TestDatabaseConnection()
         {
             bool doesItWork = dbModel.connectDatabase();
@@ -26,12 +32,12 @@ namespace Autokauppa.controller
             return didItGoIntoDatabase;
         }
 
-        public List<int> getAllAutoMakers() {
+        public List<AutonMerkki> getAllAutoMakers() {
 
             return dbModel.getAllAutoMakersFromDatabase();
         }
 
-        public List<int> getAutoModels(int makerId) {
+        public List<AutonMalli> getAutoModels(int makerId) {
 
             return dbModel.getAutoModelsByMakerId(makerId);
         }
