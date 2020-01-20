@@ -11,6 +11,11 @@ using Autokauppa.model;
 
 namespace Autokauppa.model
 {
+    
+
+
+
+
     public class DatabaseHallinta
     {
 
@@ -115,9 +120,64 @@ namespace Autokauppa.model
             }
             return autonMallit;
         }
-        
-            
-        
+        public List<Polttoaine> GetAllFuelsFromDatabase()
+        {
+            List<Polttoaine> Fuels = new List<Polttoaine>();
+            command = new SqlCommand("SELECT * FROM Polttoaine", 
+                                                            dbYhteys);
+            try
+            {
+                command.ExecuteNonQuery();
+                using (myReader = command.ExecuteReader())
+                {
+                    while (myReader.Read())
+                    {
+                        Polttoaine polttoaine = new Polttoaine();
+
+                        polttoaine.Id = Convert.ToInt32(myReader["Id"]);
+                        polttoaine.Polttoaineen_nimi = myReader["Polttoaineen_nimi"].ToString();
+
+                        Fuels.Add(polttoaine);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return Fuels;
+        }
+
+        public List<Varit> GetAllColorsFromDatabase()
+        {
+            List<Varit> Colors = new List<Varit>();
+            command = new SqlCommand("SELECT * FROM Varit", 
+                                                    dbYhteys);
+            try
+            {
+                command.ExecuteNonQuery();
+                using (myReader = command.ExecuteReader())
+                {
+                    while (myReader.Read())
+                    {
+                        Varit color = new Varit();
+
+                        color.Id = Convert.ToInt32(myReader["Id"]);
+                        color.Varin_nimi = myReader["Varin_nimi"].ToString();
+
+                        Colors.Add(color);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+
+            return Colors;
+        }
 
     }
 }

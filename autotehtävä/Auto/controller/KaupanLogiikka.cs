@@ -41,5 +41,19 @@ namespace Autokauppa.controller
 
             return dbModel.getAutoModelsByMakerId(makerId);
         }
+
+        public List<Polttoaine> GetAllFuels()
+        {
+            return dbModel.GetAllFuelsFromDatabase();
+        }
+
+        public List<Varit> GetAllColors()
+        {
+            return dbModel.GetAllColorsFromDatabase();
+        }
+
+
+
+
     }
 }

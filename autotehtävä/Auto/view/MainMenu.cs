@@ -24,10 +24,28 @@ namespace Autokauppa.view
             InitializeComponent();
         }
         
+       
+
+        private void LoadDataSources()
+        {
+            Merkki_cBox.Items.AddRange(registerHandler.getAllAutoMakers().ToArray());
+            Merkki_cBox.DisplayMember = "MerkkiNimi";
+            color_cBox.Items.AddRange(registerHandler.GetAllColors().ToArray());
+            color_cBox.DisplayMember = "Varin_nimi";
+            fuel_cBox.Items.AddRange(registerHandler.GetAllFuels().ToArray());
+            fuel_cBox.DisplayMember = "Polttoaineen_nimi";
+
+            /*
+            Merkki_cBox.DataSource = registerHandler.getAllAutoMakers().Select(AutonMerkki => AutonMerkki.MerkkiNimi).ToList();
+            fuel_cBox.DataSource = registerHandler.GetAllFuels().Select(Polttoaine => Polttoaine.Polttoaineen_nimi).ToList();
+            color_cBox.DataSource = registerHandler.GetAllColors().Select(Varit => Varit.Varin_nimi).ToList();
+           */
+        }
+        
         private void MainMenu_Load(object sender, EventArgs e)
         {
             registerHandler.connectDB();
-            Merkki_cBox.DataSource = registerHandler.getAllAutoMakers().Select(AutonMerkki => AutonMerkki.MerkkiNimi).ToList();
+            LoadDataSources();
         }
 
         private void test_DBConnection_Click(object sender, EventArgs e)
@@ -46,8 +64,31 @@ namespace Autokauppa.view
 
         private void Merkki_cBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Malli_cBox.DataSource = registerHandler.getAutoModels(Merkki_cBox.SelectedIndex + 1).Select(AutonMalli => AutonMalli.MalliNimi).ToList();
+            if(Merkki_cBox.SelectedIndex == -1)
+            {
+                Malli_cBox.Text = "";
+                Malli_cBox.Items.Clear();
+            }
+            else
+            {
+                Malli_cBox.Items.AddRange(registerHandler.getAutoModels(Merkki_cBox.SelectedIndex + 1).ToArray());
+                Malli_cBox.DisplayMember = "MalliNimi";
+            }
+            
+        }
 
+        private void uusiAuto_btn_Click(object sender, EventArgs e)
+        {
+            //Clear textboxes
+            mittarilukema.Text = "";
+            tilavuus.Text = "";
+            hinta.Text = "";
+
+            //Blank first index Combobox
+            Merkki_cBox.Text = "";
+            Malli_cBox.Text = "";
+            fuel_cBox.Text = "";
+            color_cBox.Text = "";
         }
     }
 }

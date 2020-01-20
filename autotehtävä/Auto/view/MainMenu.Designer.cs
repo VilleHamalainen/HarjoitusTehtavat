@@ -33,9 +33,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test_DBConnection = new System.Windows.Forms.ToolStripMenuItem();
             this.test_functions = new System.Windows.Forms.ToolStripMenuItem();
-            this.mittarilukema_text = new System.Windows.Forms.TextBox();
-            this.tilavuus_text = new System.Windows.Forms.TextBox();
-            this.hinta_text = new System.Windows.Forms.TextBox();
+            this.mittarilukema = new System.Windows.Forms.TextBox();
+            this.tilavuus = new System.Windows.Forms.TextBox();
+            this.hinta = new System.Windows.Forms.TextBox();
             this.Merkki_cBox = new System.Windows.Forms.ComboBox();
             this.Malli_cBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@
             this.Tallenna = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.fuel_cBox = new System.Windows.Forms.ComboBox();
+            this.color_cBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -96,26 +96,26 @@
             this.test_functions.Text = "Testaa aliohjelmia";
             this.test_functions.Click += new System.EventHandler(this.test_functions_Click);
             // 
-            // mittarilukema_text
+            // mittarilukema
             // 
-            this.mittarilukema_text.Location = new System.Drawing.Point(11, 57);
-            this.mittarilukema_text.Name = "mittarilukema_text";
-            this.mittarilukema_text.Size = new System.Drawing.Size(74, 20);
-            this.mittarilukema_text.TabIndex = 1;
+            this.mittarilukema.Location = new System.Drawing.Point(11, 57);
+            this.mittarilukema.Name = "mittarilukema";
+            this.mittarilukema.Size = new System.Drawing.Size(74, 20);
+            this.mittarilukema.TabIndex = 1;
             // 
-            // tilavuus_text
+            // tilavuus
             // 
-            this.tilavuus_text.Location = new System.Drawing.Point(103, 57);
-            this.tilavuus_text.Name = "tilavuus_text";
-            this.tilavuus_text.Size = new System.Drawing.Size(74, 20);
-            this.tilavuus_text.TabIndex = 2;
+            this.tilavuus.Location = new System.Drawing.Point(103, 57);
+            this.tilavuus.Name = "tilavuus";
+            this.tilavuus.Size = new System.Drawing.Size(74, 20);
+            this.tilavuus.TabIndex = 2;
             // 
-            // hinta_text
+            // hinta
             // 
-            this.hinta_text.Location = new System.Drawing.Point(197, 57);
-            this.hinta_text.Name = "hinta_text";
-            this.hinta_text.Size = new System.Drawing.Size(74, 20);
-            this.hinta_text.TabIndex = 3;
+            this.hinta.Location = new System.Drawing.Point(197, 57);
+            this.hinta.Name = "hinta";
+            this.hinta.Size = new System.Drawing.Size(74, 20);
+            this.hinta.TabIndex = 3;
             // 
             // Merkki_cBox
             // 
@@ -203,6 +203,7 @@
             this.uusiAuto_btn.TabIndex = 13;
             this.uusiAuto_btn.Text = "Uusi tietue";
             this.uusiAuto_btn.UseVisualStyleBackColor = true;
+            this.uusiAuto_btn.Click += new System.EventHandler(this.uusiAuto_btn_Click);
             // 
             // Tallenna
             // 
@@ -231,21 +232,21 @@
             this.button2.Text = "Seuraava";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // fuel_cBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 188);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 21);
-            this.comboBox1.TabIndex = 17;
+            this.fuel_cBox.FormattingEnabled = true;
+            this.fuel_cBox.Location = new System.Drawing.Point(12, 188);
+            this.fuel_cBox.Name = "fuel_cBox";
+            this.fuel_cBox.Size = new System.Drawing.Size(120, 21);
+            this.fuel_cBox.TabIndex = 17;
             // 
-            // comboBox2
+            // color_cBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 21);
-            this.comboBox2.TabIndex = 18;
+            this.color_cBox.FormattingEnabled = true;
+            this.color_cBox.Location = new System.Drawing.Point(151, 188);
+            this.color_cBox.Name = "color_cBox";
+            this.color_cBox.Size = new System.Drawing.Size(120, 21);
+            this.color_cBox.TabIndex = 18;
             // 
             // label7
             // 
@@ -272,8 +273,8 @@
             this.ClientSize = new System.Drawing.Size(287, 432);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.color_cBox);
+            this.Controls.Add(this.fuel_cBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tallenna);
@@ -287,9 +288,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Malli_cBox);
             this.Controls.Add(this.Merkki_cBox);
-            this.Controls.Add(this.hinta_text);
-            this.Controls.Add(this.tilavuus_text);
-            this.Controls.Add(this.mittarilukema_text);
+            this.Controls.Add(this.hinta);
+            this.Controls.Add(this.tilavuus);
+            this.Controls.Add(this.mittarilukema);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainMenu";
@@ -308,9 +309,9 @@
         private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem test_DBConnection;
-        private System.Windows.Forms.TextBox mittarilukema_text;
-        private System.Windows.Forms.TextBox tilavuus_text;
-        private System.Windows.Forms.TextBox hinta_text;
+        private System.Windows.Forms.TextBox mittarilukema;
+        private System.Windows.Forms.TextBox tilavuus;
+        private System.Windows.Forms.TextBox hinta;
         private System.Windows.Forms.ComboBox Merkki_cBox;
         private System.Windows.Forms.ComboBox Malli_cBox;
         private System.Windows.Forms.Label label1;
@@ -325,8 +326,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem test_functions;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox fuel_cBox;
+        private System.Windows.Forms.ComboBox color_cBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
     }
