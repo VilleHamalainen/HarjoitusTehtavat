@@ -55,6 +55,29 @@ namespace Autokauppa.model
 
         public bool saveAutoIntoDatabase(Auto newAuto)
         {
+            SqlCommand command = new SqlCommand(
+                "INSERT INTO auto (ID,Hinta,Rekisteri_paivamaara,Moottorin_tilavuus,Mittarilukema," +
+                "AutonMerkkiID,AutonMalliID,VaritID,PolttoaineID) VALUES (" +
+                "@Id, @Hinta, @paivamaara, @tilavuus, @mittari, @MerkkiID, @MalliID, @VaritID, @PolttoaineID)");
+            command.Parameters.AddWithValue("@Id", newAuto.Id);
+            command.Parameters.AddWithValue("@Hinta", newAuto.Hinta);
+            command.Parameters.AddWithValue("@paivamaara", newAuto.Rekisteri_paivamaara);
+            command.Parameters.AddWithValue("@tilavuus", newAuto.Moottorin_tilavuus);
+            command.Parameters.AddWithValue("@mittari", newAuto.Mittarilukema);
+            command.Parameters.AddWithValue("@MerkkiID", newAuto.AutonMerkkiID);
+            command.Parameters.AddWithValue("@MalliID", newAuto.AutonMalliID);
+            command.Parameters.AddWithValue("VaritID", newAuto.VaritID);
+            command.Parameters.AddWithValue("PolttoaineID", newAuto.PolttoaineID);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
             bool palaute = false;
             return palaute;
 

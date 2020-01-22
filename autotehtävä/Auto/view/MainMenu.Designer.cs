@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.paivamaara_Picker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.uusiAuto_btn = new System.Windows.Forms.Button();
             this.Tallenna = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.color_cBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.ID_Label = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             // 
             // mittarilukema
             // 
-            this.mittarilukema.Location = new System.Drawing.Point(11, 57);
+            this.mittarilukema.Location = new System.Drawing.Point(9, 57);
             this.mittarilukema.Name = "mittarilukema";
             this.mittarilukema.Size = new System.Drawing.Size(74, 20);
             this.mittarilukema.TabIndex = 1;
@@ -179,12 +180,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Malli";
             // 
-            // dateTimePicker1
+            // paivamaara_Picker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(44, 260);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.paivamaara_Picker.Location = new System.Drawing.Point(44, 260);
+            this.paivamaara_Picker.Name = "paivamaara_Picker";
+            this.paivamaara_Picker.Size = new System.Drawing.Size(200, 20);
+            this.paivamaara_Picker.TabIndex = 11;
             // 
             // label6
             // 
@@ -213,6 +214,7 @@
             this.Tallenna.TabIndex = 14;
             this.Tallenna.Text = "Tallenna";
             this.Tallenna.UseVisualStyleBackColor = true;
+            this.Tallenna.Click += new System.EventHandler(this.Tallenna_Click);
             // 
             // button1
             // 
@@ -266,11 +268,22 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Värit";
             // 
+            // ID_Label
+            // 
+            this.ID_Label.AutoSize = true;
+            this.ID_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Label.Location = new System.Drawing.Point(12, 399);
+            this.ID_Label.Name = "ID_Label";
+            this.ID_Label.Size = new System.Drawing.Size(35, 24);
+            this.ID_Label.TabIndex = 21;
+            this.ID_Label.Text = "ID:";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 432);
+            this.Controls.Add(this.ID_Label);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.color_cBox);
@@ -280,7 +293,7 @@
             this.Controls.Add(this.Tallenna);
             this.Controls.Add(this.uusiAuto_btn);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.paivamaara_Picker);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -319,7 +332,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker paivamaara_Picker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button uusiAuto_btn;
         private System.Windows.Forms.Button Tallenna;
@@ -330,5 +343,6 @@
         private System.Windows.Forms.ComboBox color_cBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ID_Label;
     }
 }

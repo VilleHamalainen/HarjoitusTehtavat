@@ -55,11 +55,14 @@ namespace Autokauppa.view
 
         private void test_functions_Click(object sender, EventArgs e)
         {
+            
             registerHandler.connectDatabase();
+            
+            /*
             foreach (AutonMalli autonMallit in registerHandler.getAutoModels(3))
             {
                 Console.WriteLine(autonMallit.Id + " " + autonMallit.MalliNimi + " " + autonMallit.MerkkiId);
-            }
+            }*/
         }
 
         private void Merkki_cBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +92,64 @@ namespace Autokauppa.view
             Malli_cBox.Text = "";
             fuel_cBox.Text = "";
             color_cBox.Text = "";
+        }
+
+        private void GetCarValues(object sender, EventArgs e)
+        { 
+            bool success = false;
+            Auto newAuto = new Auto();
+            
+            if(newAuto.Id == 0)
+            {
+                ID_Label.Text = "ID: Not saved";
+            }
+            else
+            {
+               // newAuto.Id =;
+            }
+
+            //Price Type Check
+            success = decimal.TryParse(hinta.Text, out decimal autonHinta);
+            if (success)
+                newAuto.Hinta = autonHinta;
+            else
+                MessageBox.Show("Price can only be numbers");
+
+            //Mileage Type Check
+            success = int.TryParse(mittarilukema.Text, out int setMittari);
+            if (success)
+                newAuto.Mittarilukema = setMittari;
+            else
+                MessageBox.Show("Mileage can only be numbers");
+
+            //Engine Capacity Type Check
+            success = int.TryParse(tilavuus.Text, out int MoTilavuus);
+            if (success)
+                newAuto.Moottorin_tilavuus = MoTilavuus;
+            else
+                MessageBox.Show("Engine capacity can only be numbers");
+
+            Console.WriteLine(paivamaara_Picker);
+            
+            Merkki_cBox.ValueMember = "ID";
+            
+            newAuto.AutonMerkkiID = (Merkki_cBox.SelectedItem as AutonMerkki).Id;
+
+            newAuto.AutonMalliID = (Malli_cBox.SelectedItem as AutonMalli).Id;
+             
+            newAuto.PolttoaineID = (fuel_cBox.SelectedItem as Polttoaine).Id;
+
+            newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
+            //FIX DATE FORMATTING
+            newAuto.Rekisteri_paivamaara = Convert.ToDateTime(paivamaara_Picker);
+
+            registerHandler.saveAuto(newAuto);
+            
+        }
+
+        private void Tallenna_Click(object sender, EventArgs e)
+        {
+            GetCarValues(sender, e);
         }
     }
 }

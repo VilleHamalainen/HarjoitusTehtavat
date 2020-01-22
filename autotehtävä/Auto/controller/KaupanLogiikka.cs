@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autokauppa.model;
+using Autokauppa.view;
 
 namespace Autokauppa.controller
 {
@@ -26,8 +27,10 @@ namespace Autokauppa.controller
             return doesItWork;
         }
 
-        public bool saveAuto(model.Auto newAuto) 
+        public bool saveAuto(Auto newAuto) 
         {
+            
+
             bool didItGoIntoDatabase = dbModel.saveAutoIntoDatabase(newAuto);
             return didItGoIntoDatabase;
         }
@@ -52,7 +55,10 @@ namespace Autokauppa.controller
             return dbModel.GetAllColorsFromDatabase();
         }
 
-
+        private void newAutoValues()
+        {
+            
+        }
 
 
     }
