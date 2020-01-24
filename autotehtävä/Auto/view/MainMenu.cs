@@ -123,7 +123,7 @@ namespace Autokauppa.view
                 MessageBox.Show("Mileage can only be numbers");
 
             //Engine Capacity Type Check
-            success = int.TryParse(tilavuus.Text, out int MoTilavuus);
+            success = decimal.TryParse(tilavuus.Text, out decimal MoTilavuus);
             if (success)
                 newAuto.Moottorin_tilavuus = MoTilavuus;
             else
@@ -141,7 +141,7 @@ namespace Autokauppa.view
 
             newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
             //FIX DATE FORMATTING
-            newAuto.Rekisteri_paivamaara = Convert.ToDateTime(paivamaara_Picker);
+            newAuto.Rekisteri_paivamaara = paivamaara_Picker.Value.Date;
 
             registerHandler.saveAuto(newAuto);
             
@@ -151,5 +151,14 @@ namespace Autokauppa.view
         {
             GetCarValues(sender, e);
         }
+
+        private void NextCar()
+        {
+            
+        }
+
+
     }
+
+
 }

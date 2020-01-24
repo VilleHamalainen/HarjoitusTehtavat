@@ -56,10 +56,10 @@ namespace Autokauppa.model
         public bool saveAutoIntoDatabase(Auto newAuto)
         {
             SqlCommand command = new SqlCommand(
-                "INSERT INTO auto (ID,Hinta,Rekisteri_paivamaara,Moottorin_tilavuus,Mittarilukema," +
+                "INSERT INTO auto (Hinta,Rekisteri_paivamaara,Moottorin_tilavuus,Mittarilukema," +
                 "AutonMerkkiID,AutonMalliID,VaritID,PolttoaineID) VALUES (" +
-                "@Id, @Hinta, @paivamaara, @tilavuus, @mittari, @MerkkiID, @MalliID, @VaritID, @PolttoaineID)");
-            command.Parameters.AddWithValue("@Id", newAuto.Id);
+                "@Hinta, @paivamaara, @tilavuus, @mittari, @MerkkiID, @MalliID, @VaritID, @PolttoaineID)",
+                                                                            dbYhteys);
             command.Parameters.AddWithValue("@Hinta", newAuto.Hinta);
             command.Parameters.AddWithValue("@paivamaara", newAuto.Rekisteri_paivamaara);
             command.Parameters.AddWithValue("@tilavuus", newAuto.Moottorin_tilavuus);
@@ -87,7 +87,7 @@ namespace Autokauppa.model
         public List<AutonMerkki> getAllAutoMakersFromDatabase()
         {
             List<AutonMerkki> AutonMerkit = new List<AutonMerkki>();
-            SqlCommand command = new SqlCommand("SELECT * FROM AutonMerkki",
+            command = new SqlCommand("SELECT * FROM AutonMerkki",
                                                                     dbYhteys);
             try
             {
@@ -112,7 +112,6 @@ namespace Autokauppa.model
             return AutonMerkit;
 
         }
-
         public List<AutonMalli> getAutoModelsByMakerId(int makerId)
         {
             List<AutonMalli> autonMallit = new List<AutonMalli>();
@@ -171,7 +170,6 @@ namespace Autokauppa.model
 
             return Fuels;
         }
-
         public List<Varit> GetAllColorsFromDatabase()
         {
             List<Varit> Colors = new List<Varit>();
@@ -202,5 +200,32 @@ namespace Autokauppa.model
             return Colors;
         }
 
+        public Auto getNextCarFromDatabase()
+        {
+            Auto newAuto = new Auto();
+            int currentID = 0;
+
+            using (command = new SqlCommand("SELECT TOP 1 * FROM auto WHERE ID > @currentID",
+                                                                    dbYhteys))
+            {
+                command.Parameters.AddWithValue("@currentID", currentID);
+                using (myReader = command.ExecuteReader())
+                {
+                    while (myReader.Read())
+                    {
+                        newAuto.Id = Convert.ToInt32(myReader["ID"]);
+                        newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
+                        newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]);
+                        newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);
+                        newAuto.Mittarilukema = Convert.ToInt32(myReader["Mittarilukema"]);
+                        newAuto.AutonMerkkiID = Convert.ToInt32(myReader["AutonMerkkiID"]);
+                        newAuto.AutonMalliID = Convert.ToInt32(myReader["AutonMalliID"]);
+                        newAuto.VaritID = Convert.ToInt32(myReader["VaritID"]);
+                        newAuto.PolttoaineID = Convert.ToInt32(myReader["PolttoaineID"]);
+                    }
+                }
+            }
+            return newAuto;
+        }
     }
 }

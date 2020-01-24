@@ -55,9 +55,9 @@ namespace Autokauppa.controller
             return dbModel.GetAllColorsFromDatabase();
         }
 
-        private void newAutoValues()
+        private Auto GetNextCar()
         {
-            
+            return getNextCarFromDatabase();
         }
 
 
