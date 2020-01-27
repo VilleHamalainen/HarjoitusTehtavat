@@ -115,7 +115,7 @@ namespace Autokauppa.model
         public List<AutonMalli> getAutoModelsByMakerId(int makerId)
         {
             List<AutonMalli> autonMallit = new List<AutonMalli>();
-            command = new SqlCommand("SELECT * FROM AutonMallit WHERE AutonMerkkiID =@makerId",
+            command = new SqlCommand("SELECT * FROM AutonMallit WHERE AutonMerkkiID = @makerId",
                                                          dbYhteys);
             command.Parameters.AddWithValue("@makerId", makerId);
 
@@ -204,27 +204,45 @@ namespace Autokauppa.model
         {
             Auto newAuto = new Auto();
             int currentID = 0;
+            connectDatabase();
 
+            //getAutoModelsByMakerId(Convert.ToInt32(myReader["AutonMallit.AutonMerkkiID"]));
             using (command = new SqlCommand("SELECT TOP 1 * FROM auto WHERE ID > @currentID",
                                                                     dbYhteys))
             {
-                command.Parameters.AddWithValue("@currentID", currentID);
-                using (myReader = command.ExecuteReader())
+                
+                try
                 {
-                    while (myReader.Read())
+                    command.Parameters.AddWithValue("@currentID", currentID++);
+                    command.ExecuteNonQuery();
                     {
-                        newAuto.Id = Convert.ToInt32(myReader["ID"]);
-                        newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
-                        newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]);
-                        newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);
-                        newAuto.Mittarilukema = Convert.ToInt32(myReader["Mittarilukema"]);
-                        newAuto.AutonMerkkiID = Convert.ToInt32(myReader["AutonMerkkiID"]);
-                        newAuto.AutonMalliID = Convert.ToInt32(myReader["AutonMalliID"]);
-                        newAuto.VaritID = Convert.ToInt32(myReader["VaritID"]);
-                        newAuto.PolttoaineID = Convert.ToInt32(myReader["PolttoaineID"]);
+                        
+                        using (myReader = command.ExecuteReader())
+                        {
+                            while (myReader.Read())
+                            {
+                                newAuto.Id = Convert.ToInt32(myReader["ID"]);
+                                newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
+                                newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]).Date;
+                                newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);
+                                newAuto.Mittarilukema = Convert.ToInt32(myReader["Mittarilukema"]);
+                                newAuto.AutonMerkkiID = Convert.ToInt32(myReader["AutonMerkkiID"]);
+                                newAuto.AutonMalliID = Convert.ToInt32(myReader["AutonMalliID"]);
+                                newAuto.VaritID = Convert.ToInt32(myReader["VaritID"]);
+                                newAuto.PolttoaineID = Convert.ToInt32(myReader["PolttoaineID"]);
+                                
+                            }
+                        }
                     }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
+                
+            
             return newAuto;
         }
     }

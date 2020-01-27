@@ -21,6 +21,10 @@ namespace Autokauppa.view
         public MainMenu()
         {
             registerHandler = new KaupanLogiikka();
+
+            if(registerHandler.connectDB() != true)
+            registerHandler.connectDB();
+            
             InitializeComponent();
         }
         
@@ -44,7 +48,6 @@ namespace Autokauppa.view
         
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            registerHandler.connectDB();
             LoadDataSources();
         }
 
@@ -55,14 +58,7 @@ namespace Autokauppa.view
 
         private void test_functions_Click(object sender, EventArgs e)
         {
-            
             registerHandler.connectDatabase();
-            
-            /*
-            foreach (AutonMalli autonMallit in registerHandler.getAutoModels(3))
-            {
-                Console.WriteLine(autonMallit.Id + " " + autonMallit.MalliNimi + " " + autonMallit.MerkkiId);
-            }*/
         }
 
         private void Merkki_cBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,6 +72,7 @@ namespace Autokauppa.view
             {
                 Malli_cBox.Items.AddRange(registerHandler.getAutoModels(Merkki_cBox.SelectedIndex + 1).ToArray());
                 Malli_cBox.DisplayMember = "MalliNimi";
+                Malli_cBox.ValueMember = "ID";
             }
             
         }
@@ -140,6 +137,7 @@ namespace Autokauppa.view
             newAuto.PolttoaineID = (fuel_cBox.SelectedItem as Polttoaine).Id;
 
             newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
+
             //FIX DATE FORMATTING
             newAuto.Rekisteri_paivamaara = paivamaara_Picker.Value.Date;
 
@@ -152,7 +150,23 @@ namespace Autokauppa.view
             GetCarValues(sender, e);
         }
 
-        private void NextCar()
+        private void NextCar(object sender, EventArgs e)
+        {
+            Auto newAuto = registerHandler.GetNextCar();
+            ID_Label.Text = "ID: " + newAuto.Id;
+            hinta.Text = newAuto.Hinta.ToString();
+            paivamaara_Picker.Value = new DateTime(newAuto.Rekisteri_paivamaara.Year, newAuto.Rekisteri_paivamaara.Month, newAuto.Rekisteri_paivamaara.Day);
+            tilavuus.Text = newAuto.Moottorin_tilavuus.ToString();
+            mittarilukema.Text = newAuto.Mittarilukema.ToString();
+            Merkki_cBox.SelectedIndex = newAuto.AutonMerkkiID - 1;
+            Malli_cBox.SelectedItem = newAuto.AutonMalliID;
+            fuel_cBox.SelectedIndex = newAuto.PolttoaineID;
+            color_cBox.SelectedIndex = newAuto.VaritID;
+
+
+        }
+
+        private void PreviousCar(object sender, EventArgs e)
         {
             
         }

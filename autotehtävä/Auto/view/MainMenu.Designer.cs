@@ -47,8 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.uusiAuto_btn = new System.Windows.Forms.Button();
             this.Tallenna = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.previous_btn = new System.Windows.Forms.Button();
+            this.next_btn = new System.Windows.Forms.Button();
             this.fuel_cBox = new System.Windows.Forms.ComboBox();
             this.color_cBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -216,23 +216,24 @@
             this.Tallenna.UseVisualStyleBackColor = true;
             this.Tallenna.Click += new System.EventHandler(this.Tallenna_Click);
             // 
-            // button1
+            // previous_btn
             // 
-            this.button1.Location = new System.Drawing.Point(63, 337);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Edellinen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.previous_btn.Location = new System.Drawing.Point(63, 337);
+            this.previous_btn.Name = "previous_btn";
+            this.previous_btn.Size = new System.Drawing.Size(75, 23);
+            this.previous_btn.TabIndex = 15;
+            this.previous_btn.Text = "Edellinen";
+            this.previous_btn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // next_btn
             // 
-            this.button2.Location = new System.Drawing.Point(148, 337);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Seuraava";
-            this.button2.UseVisualStyleBackColor = true;
+            this.next_btn.Location = new System.Drawing.Point(148, 337);
+            this.next_btn.Name = "next_btn";
+            this.next_btn.Size = new System.Drawing.Size(75, 23);
+            this.next_btn.TabIndex = 16;
+            this.next_btn.Text = "Seuraava";
+            this.next_btn.UseVisualStyleBackColor = true;
+            this.next_btn.Click += new System.EventHandler(this.NextCar);
             // 
             // fuel_cBox
             // 
@@ -288,8 +289,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.color_cBox);
             this.Controls.Add(this.fuel_cBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.next_btn);
+            this.Controls.Add(this.previous_btn);
             this.Controls.Add(this.Tallenna);
             this.Controls.Add(this.uusiAuto_btn);
             this.Controls.Add(this.label6);
@@ -336,8 +337,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button uusiAuto_btn;
         private System.Windows.Forms.Button Tallenna;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button previous_btn;
+        private System.Windows.Forms.Button next_btn;
         private System.Windows.Forms.ToolStripMenuItem test_functions;
         private System.Windows.Forms.ComboBox fuel_cBox;
         private System.Windows.Forms.ComboBox color_cBox;
