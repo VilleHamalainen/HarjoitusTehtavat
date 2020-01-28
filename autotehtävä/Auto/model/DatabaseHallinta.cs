@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Autokauppa.model;
+using System.Data;
 
 
 namespace Autokauppa.model
@@ -31,7 +32,10 @@ namespace Autokauppa.model
 
         public bool connectDatabase()
         {
-            dbYhteys.ConnectionString = yhteysTiedot;
+            if(dbYhteys.State != ConnectionState.Open)
+            {
+                dbYhteys.ConnectionString = yhteysTiedot;
+            }
 
             try
             {
@@ -141,7 +145,7 @@ namespace Autokauppa.model
                 Console.WriteLine(e);
             }
             return autonMallit;
-        }
+            }
         public List<Polttoaine> GetAllFuelsFromDatabase()
         {
             List<Polttoaine> Fuels = new List<Polttoaine>();
@@ -200,10 +204,10 @@ namespace Autokauppa.model
             return Colors;
         }
 
-        public Auto getNextCarFromDatabase()
+        public Auto getNextCarFromDatabase(int currentID)
         {
             Auto newAuto = new Auto();
-            int currentID = 0;
+            disconnectDatabase();
             connectDatabase();
 
             //getAutoModelsByMakerId(Convert.ToInt32(myReader["AutonMallit.AutonMerkkiID"]));
@@ -213,7 +217,8 @@ namespace Autokauppa.model
                 
                 try
                 {
-                    command.Parameters.AddWithValue("@currentID", currentID++);
+                    command.Parameters.AddWithValue("@currentID", currentID);
+
                     command.ExecuteNonQuery();
                     {
                         
@@ -222,6 +227,7 @@ namespace Autokauppa.model
                             while (myReader.Read())
                             {
                                 newAuto.Id = Convert.ToInt32(myReader["ID"]);
+                                currentID = newAuto.Id;
                                 newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
                                 newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]).Date;
                                 newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);

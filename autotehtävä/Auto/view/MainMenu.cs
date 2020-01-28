@@ -14,7 +14,7 @@ namespace Autokauppa.view
 {
     public partial class MainMenu : Form
     {
-        
+        int currentID = 0;
 
         KaupanLogiikka registerHandler;
 
@@ -133,7 +133,7 @@ namespace Autokauppa.view
             newAuto.AutonMerkkiID = (Merkki_cBox.SelectedItem as AutonMerkki).Id;
 
             newAuto.AutonMalliID = (Malli_cBox.SelectedItem as AutonMalli).Id;
-             
+            Console.WriteLine(newAuto.AutonMalliID);
             newAuto.PolttoaineID = (fuel_cBox.SelectedItem as Polttoaine).Id;
 
             newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
@@ -152,16 +152,20 @@ namespace Autokauppa.view
 
         private void NextCar(object sender, EventArgs e)
         {
-            Auto newAuto = registerHandler.GetNextCar();
+            
+            Auto newAuto = registerHandler.GetNextCar(currentID);
+
             ID_Label.Text = "ID: " + newAuto.Id;
+            currentID = newAuto.Id;
+            Merkki_cBox_SelectedIndexChanged(sender, e);
             hinta.Text = newAuto.Hinta.ToString();
             paivamaara_Picker.Value = new DateTime(newAuto.Rekisteri_paivamaara.Year, newAuto.Rekisteri_paivamaara.Month, newAuto.Rekisteri_paivamaara.Day);
             tilavuus.Text = newAuto.Moottorin_tilavuus.ToString();
             mittarilukema.Text = newAuto.Mittarilukema.ToString();
             Merkki_cBox.SelectedIndex = newAuto.AutonMerkkiID - 1;
             Malli_cBox.SelectedItem = newAuto.AutonMalliID;
-            fuel_cBox.SelectedIndex = newAuto.PolttoaineID;
-            color_cBox.SelectedIndex = newAuto.VaritID;
+            fuel_cBox.SelectedIndex = newAuto.PolttoaineID - 1;
+            color_cBox.SelectedIndex = newAuto.VaritID - 1;
 
 
         }
