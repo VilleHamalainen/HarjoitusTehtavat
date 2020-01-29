@@ -224,6 +224,7 @@
             this.previous_btn.TabIndex = 15;
             this.previous_btn.Text = "Edellinen";
             this.previous_btn.UseVisualStyleBackColor = true;
+            this.previous_btn.Click += new System.EventHandler(this.PreviousCar);
             // 
             // next_btn
             // 

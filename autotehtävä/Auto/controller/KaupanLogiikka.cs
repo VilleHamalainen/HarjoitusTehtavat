@@ -60,6 +60,10 @@ namespace Autokauppa.controller
             return getNextCarFromDatabase(currentID);
         }
 
+        public Auto GetPreviousCar(int currentID)
+        {
+            return GetPreviousCarFromDatabase(currentID);
+        }
 
     }
 }
