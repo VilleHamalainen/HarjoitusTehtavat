@@ -209,7 +209,6 @@ namespace Autokauppa.model
             Auto newAuto = new Auto();
             disconnectDatabase();
             connectDatabase();
-            
             using (command = new SqlCommand("SELECT TOP 1 * FROM auto WHERE ID > @currentID",
                                                                     dbYhteys))
             {
@@ -217,7 +216,7 @@ namespace Autokauppa.model
                 try
                 {
                     command.Parameters.AddWithValue("@currentID", currentID);
-
+                    
                     command.ExecuteNonQuery();
                     {
                         
@@ -226,7 +225,6 @@ namespace Autokauppa.model
                             while (myReader.Read())
                             {
                                 newAuto.Id = Convert.ToInt32(myReader["ID"]);
-                                currentID = newAuto.Id;
                                 newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
                                 newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]).Date;
                                 newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);
@@ -246,7 +244,6 @@ namespace Autokauppa.model
                     Console.WriteLine(e);
                 }
             }
-                
             
             return newAuto;
         }
@@ -256,24 +253,20 @@ namespace Autokauppa.model
             Auto newAuto = new Auto();
             disconnectDatabase();
             connectDatabase();
-
-            using (command = new SqlCommand("SELECT TOP 1 * FROM auto WHERE ID < @currentID",
-                                                                    dbYhteys))
+            using (command = new SqlCommand("SELECT TOP 1 * FROM auto WHERE ID < @currentID ORDER BY ID DESC",                                                       dbYhteys))
+               
             {
-
                 try
                 {
                     command.Parameters.AddWithValue("@currentID", currentID);
 
                     command.ExecuteNonQuery();
                     {
-
                         using (myReader = command.ExecuteReader())
                         {
                             while (myReader.Read())
                             {
                                 newAuto.Id = Convert.ToInt32(myReader["ID"]);
-                                currentID = newAuto.Id;
                                 newAuto.Hinta = Convert.ToDecimal(myReader["Hinta"]);
                                 newAuto.Rekisteri_paivamaara = Convert.ToDateTime(myReader["Rekisteri_paivamaara"]).Date;
                                 newAuto.Moottorin_tilavuus = Convert.ToDecimal(myReader["Moottorin_tilavuus"]);
@@ -282,11 +275,9 @@ namespace Autokauppa.model
                                 newAuto.AutonMalliID = Convert.ToInt32(myReader["AutonMalliID"]);
                                 newAuto.VaritID = Convert.ToInt32(myReader["VaritID"]);
                                 newAuto.PolttoaineID = Convert.ToInt32(myReader["PolttoaineID"]);
-
                             }
                         }
                     }
-
                 }
                 catch (Exception e)
                 {

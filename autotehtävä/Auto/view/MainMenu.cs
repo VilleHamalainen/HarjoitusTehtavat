@@ -124,14 +124,22 @@ namespace Autokauppa.view
             Console.WriteLine(paivamaara_Picker);
             
             Merkki_cBox.ValueMember = "ID";
+            try
+            {
+                newAuto.AutonMerkkiID = (Merkki_cBox.SelectedItem as AutonMerkki).Id;
+
+                newAuto.AutonMalliID = (Malli_cBox.SelectedItem as AutonMalli).Id;
+
+                newAuto.PolttoaineID = (fuel_cBox.SelectedItem as Polttoaine).Id;
+
+                newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Choose all values from the boxes");
+                Console.WriteLine(ex);
+            }
             
-            newAuto.AutonMerkkiID = (Merkki_cBox.SelectedItem as AutonMerkki).Id;
-
-            newAuto.AutonMalliID = (Malli_cBox.SelectedItem as AutonMalli).Id;
-
-            newAuto.PolttoaineID = (fuel_cBox.SelectedItem as Polttoaine).Id;
-
-            newAuto.VaritID = (color_cBox.SelectedItem as Varit).Id;
 
             //FIX DATE FORMATTING
             newAuto.Rekisteri_paivamaara = paivamaara_Picker.Value.Date;
@@ -193,7 +201,12 @@ namespace Autokauppa.view
 
             //Textfield values
             hinta.Text = newAuto.Hinta.ToString();
-            paivamaara_Picker.Value = new DateTime(newAuto.Rekisteri_paivamaara.Year, newAuto.Rekisteri_paivamaara.Month, newAuto.Rekisteri_paivamaara.Day);
+            try {
+                    paivamaara_Picker.Value = new DateTime(newAuto.Rekisteri_paivamaara.Year, newAuto.Rekisteri_paivamaara.Month, newAuto.Rekisteri_paivamaara.Day);
+                }
+            catch
+                { MessageBox.Show("Couldn't pull data from DB"); }
+            
             tilavuus.Text = newAuto.Moottorin_tilavuus.ToString();
             mittarilukema.Text = newAuto.Mittarilukema.ToString();
 
