@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Math_Game
 {
-    class Calc
+    public class Calc
     {
+        Random rnd = new Random();
         private float num1 = 0;
         private float num2 = 0;
         private int opNum = 0;
@@ -17,32 +18,11 @@ namespace Math_Game
         public int OpNum { get => opNum; set => opNum = value; }
         public float Answer { get => answer; set => answer = value; }
 
-        public float Calculation()
+        public Calc(int num1, int opNum, int num2)
         {
-            switch (OpNum)
-            {
-                case 1:
-                    {
-                        answer = num1 + num2;
-                        break;
-                    }
-                case 2:
-                    {
-                        answer = num1 - num2;
-                        break;
-                    }
-                case 3:
-                    {
-                        answer = num1 * num2;
-                        break;
-                    }
-                case 4:
-                    {
-                        answer = num1 / num2;
-                        break;
-                    }
-            }
-            return answer;
+
         }
+
+        
     }
 }

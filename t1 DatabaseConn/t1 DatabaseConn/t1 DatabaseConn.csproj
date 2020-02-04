@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A468756-D955-4ADC-9700-5FA36F94B614}</ProjectGuid>
+    <ProjectGuid>{034C5A75-F1C8-4956-8517-374B5A073BA3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Math_Game</RootNamespace>
-    <AssemblyName>Math Game</AssemblyName>
+    <RootNamespace>t1_DatabaseConn</RootNamespace>
+    <AssemblyName>t1 DatabaseConn</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,13 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calc.cs" />
-    <Compile Include="CalcForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CalcForm.Designer.cs">
-      <DependentUpon>CalcForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CalcForm.resx">
-      <DependentUpon>CalcForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

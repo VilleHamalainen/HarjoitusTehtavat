@@ -187,6 +187,7 @@ namespace Laivanupotus
             int AIcolLength = Lauta.GetLength(1);
             
             Board(Lauta,rowLength,colLength, false);
+            Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             Lauta = AddShips(Lauta);
             Board(Lauta, rowLength, colLength, false);
@@ -202,6 +203,7 @@ namespace Laivanupotus
                 Console.Clear();
                 AIShoot(Lauta);
                 Board(Lauta, colLength, rowLength, false);
+                Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 Player1Win(AILauta);
                 Player2Win(Lauta);

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t1 DatabaseConn", "t1 DatabaseConn\t1 DatabaseConn.csproj", "{034C5A75-F1C8-4956-8517-374B5A073BA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{034C5A75-F1C8-4956-8517-374B5A073BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034C5A75-F1C8-4956-8517-374B5A073BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034C5A75-F1C8-4956-8517-374B5A073BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034C5A75-F1C8-4956-8517-374B5A073BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06C9F308-F9B9-4D24-B1AC-53751E5EBF8D}
+	EndGlobalSection
+EndGlobal
