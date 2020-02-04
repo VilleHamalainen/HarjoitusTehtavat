@@ -10,29 +10,36 @@ namespace Array
     {
         static void Main(string[] args)
         {
+            int number = 5;
+            Console.WriteLine(number++);
+            Console.ReadKey();
+
             Console.OutputEncoding = Encoding.UTF8;
             int i, amount;
             string[] hinta = { "3€", "4€", "5€" };
             string[] Hedelmat = { "Omena", "Mandariini", "Banaani" };
-          /*  //T1
-            amount = int.Parse(Console.ReadLine());
 
-            for (i = 0; i < amount; i++)
-            {
-                Console.WriteLine(Hedelmat[i]);
-            }
+            /*  //T1
+              amount = int.Parse(Console.ReadLine());
 
-
-            //T2
-            string input = Console.ReadLine();
+              for (i = 0; i < amount; i++)
+              {
+                  Console.WriteLine(Hedelmat[i]);
+              }
 
 
-            i = int.Parse(input);
-            Console.WriteLine(Hedelmat[i] + " " + hinta[i]);
-            Console.ReadKey();
-            */
+              //T2
+              string input = Console.ReadLine();
+
+
+              i = int.Parse(input);
+              Console.WriteLine(Hedelmat[i] + " " + hinta[i]);
+              Console.ReadKey();
+              */
             //T3
-            int 1, tuotteet;
+            
+            /*
+            int tuotteet = 0;
             for(i = 0; i < tuotteet; i++)
             {
             
@@ -75,7 +82,7 @@ namespace Array
             Console.WriteLine("{0} {1} {2}", Nimi3, Hinta3, Lkm3);
             Console.ReadKey();
 
-
+            */
 
 
         }
