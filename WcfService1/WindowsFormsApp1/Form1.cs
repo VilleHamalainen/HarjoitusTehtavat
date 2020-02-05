@@ -32,19 +32,15 @@ namespace WindowsFormsApp1
             ServiceReference1.Service1Client client = new
                 ServiceReference1.Service1Client();
 
-            int firstBtn;
-            //string secondBtn;
+            int multi;
 
 
-            //firstBtn = client.GetData(int.Parse(textBox2.Text));
-            //secondBtn = client.GetData(int.Parse(textBox3.Text));
+            multi = client.GetMulti(int.Parse(textBox2.Text), int.Parse(textBox3.Text));
 
-            
-            //firstBtn = client.;
-            //label2.Text = ;
-            
+            label2.Text = multi.ToString();
 
-            
+
+
         }
     }
 }

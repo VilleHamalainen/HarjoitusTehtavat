@@ -84,6 +84,12 @@ namespace WindowsFormsApp1.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMulti", ReplyAction="http://tempuri.org/IService1/GetMultiResponse")]
+        int GetMulti(int value, int value2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMulti", ReplyAction="http://tempuri.org/IService1/GetMultiResponse")]
+        System.Threading.Tasks.Task<int> GetMultiAsync(int value, int value2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         WindowsFormsApp1.ServiceReference1.CompositeType GetDataUsingDataContract(WindowsFormsApp1.ServiceReference1.CompositeType composite);
         
@@ -122,9 +128,16 @@ namespace WindowsFormsApp1.ServiceReference1 {
             return base.Channel.GetData(value);
         }
         
-
         public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
             return base.Channel.GetDataAsync(value);
+        }
+        
+        public int GetMulti(int value, int value2) {
+            return base.Channel.GetMulti(value, value2);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMultiAsync(int value, int value2) {
+            return base.Channel.GetMultiAsync(value, value2);
         }
         
         public WindowsFormsApp1.ServiceReference1.CompositeType GetDataUsingDataContract(WindowsFormsApp1.ServiceReference1.CompositeType composite) {
